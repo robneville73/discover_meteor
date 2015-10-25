@@ -19,7 +19,9 @@ if (Posts.find().count() === 0) {
     userId: sacha._id,
     author: sacha.profile.name,
     submitted: new Date(now - 7 * 3600 * 1000),
-    commentsCount: 2
+    commentsCount: 2,
+    upvoters: [],
+    votes: 0
   });
 
   Comments.insert({
@@ -44,7 +46,9 @@ if (Posts.find().count() === 0) {
     userId: tom._id,
     author: tom.profile.name,
     submitted: new Date(now - 10 * 3600 * 1000),
-    commentsCount: 0
+    commentsCount: 0,
+    upvoters: [],
+    votes: 0
   });
 
   Posts.insert({
@@ -53,7 +57,9 @@ if (Posts.find().count() === 0) {
     userId: tom._id,
     author: tom.profile.name,
     submitted: new Date(now - 12 * 3600 * 1000),
-    commentsCount: 0
+    commentsCount: 0,
+    upvoters: [],
+    votes: 0
   });
 
   for (var i=0; i < 10; i++) {
@@ -63,7 +69,9 @@ if (Posts.find().count() === 0) {
       userId: sacha._id,
       url: 'http://google.com/?q=test-' + i,
       submitted: new Date(now - i * 3600 * 1000),
-      commentsCount: 0
+      commentsCount: 0,
+      upvoters: [],
+      votes: 0
     });
   }
 
